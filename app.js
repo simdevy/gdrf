@@ -3,9 +3,14 @@
 
 
     angular.module('myFirstApp', [])
-    .controller('MyFirstController', function($scope){
+    .controller('MyFirstController', function($scope, $filter){
         $scope.name = "";
         $scope.totalValue = 0;
+
+        $scope.upper = function (){
+            var upCase = $filter('uppercase');
+            $scope.name =upCase($scope.name);
+        }
 
         $scope.displayNumeric = function () {
             var totalNameValue = calculateNumericForString($scope.name);
