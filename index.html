@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myFirstApp">
+<html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,13 +8,33 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <title>GDRF</title>
     </head>
-    <body>
+    <body ng-app="myFirstApp">
         <h1>Welcome to GDRF</h1>
         <br>
-
         <div ng-controller="MyFirstController">
-            {{name}}
-            <input type="text" ng-model="name">
+        <div>
+            <input type="text" 
+                ng-model="name"
+                ng-keyup="displayNumeric();">
+        </div>
+        <div>
+            The total numeric calue of a person's name is:  {{totalValue}}
+        </div>    
+       
+        </div>
+        <div id="target" greeting="hello">
+            <section>Section 1
+                <article>Article 1</article>
+            </section>
+        <script>
+            var elem = document.getElementById('target');
+            console.log(elem);
+            console.log(elem.getAttribute('greeting'));
+
+            var elem2 = document.querySelector("[ng-app]");
+            console.log(elem2);
+            console.log(elem2.getAttribute('ng-app'));    
+        </script>
         </div>
         
         <p>This Application will allow you to derive the correct license ascociated with your Market Data Request</p>
